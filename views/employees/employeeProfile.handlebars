@@ -1,0 +1,56 @@
+<section class="container bg-white my-2">
+    <article class="row">
+        <div class="col-3 text-center bg-light ">
+            {{#if user}}
+                <span class="editIcon"  title="Edit Profile">
+                <a href="/employee/edit-emp/{{payload._id}}"><img
+                    src="https://cdn-icons.flaticon.com/png/512/143/premium/143437.png?token=exp=1644345781~hmac=5ed267eeb2798a1a0a80c3291520e347"
+                    alt=""
+                    title="edit profile"
+                /></a>
+                </span>
+            {{else}}
+
+            {{/if}}
+             
+            <figure>
+                <img class="mt-5  " style="height: 200px; border-radius:5px" src="{{trimString payload.emp_photo.0.path}}" alt="{{payload.emp_name}}">
+            </figure>
+            <footer>
+                <p class="h2 text-uppercase">{{payload.emp_name}}</p>
+                <p class="lead small">{{payload.emp_email}}</p>
+            </footer>
+            
+        </div>
+        <div class="col-9  py-3 px-4 bg-light">
+            {{#if user}}
+            <form class="float-right text-danger"
+                    method="post"
+                    action="/employee/delete-emp/{{payload._id}}?_method=DELETE">
+
+                    <input type="hidden" name="_method" value="DELETE" />
+                    <button class="btn btn-danger">DELETE PROFILE</button>
+            </form> 
+            {{else}}
+
+            {{/if}}
+            
+            
+                
+                <p class="h3 text-capitalize border-bottom ">{{payload.emp_name}}</p>
+               
+                <p class="lead"> Emp ID:  {{payload.emp_id}}</p>
+                <p class="lead"> Salary:  {{payload.emp_salary}}</p>
+                <p class="lead"> Designation : {{payload.emp_des}}</p>
+                <p class="lead"> Experince: {{payload.emp_exp}}</p>
+                <p class="lead"> Education: {{payload.emp_edu}}</p>
+                <p class="lead"> Skills : {{payload.emp_skills}}</p>
+                <p class="lead"> Contact: {{payload.emp_phone}}</p>
+                <p class="lead text-capitalize"> Gender: {{payload.emp_gender}}</p>
+                <p class="lead text-capitalize"> Location: {{payload.emp_location}}</p>
+           
+
+
+        </div>
+    </article>
+</section>

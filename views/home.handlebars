@@ -1,0 +1,64 @@
+{{!-- <section class="container-fluid my-4 bg-white">
+    <article>
+        <table class="table table-bordered table-hover text-uppercase">
+            <thead class="table-dark">
+                <tr>
+                    <th>photo</th>
+                    <th>id </th>
+                    <th>name</th>
+                    <th>salary</th>
+                    <th>designation</th>
+                    <th>exp</th>
+                    <th>edu</th>
+                    <th>emails</th>
+                    <th>skills</th>
+                    <th>phone</th>
+                    <th>gender</th>
+                    <th>location</th>
+                    <th>view Profile</th>
+                    
+                </tr>
+            </thead>
+            <tbody class="bg-white">
+                {{#each payload}}
+                <tr>
+                <td><img class="img-thumbnail" style="height: 50px; border:none" src="{{trimString emp_photo.0.path}}" alt="{{emp_name}}"></td>
+                <td>{{emp_id}}</td>
+                <td>{{emp_name}}</td>
+                <td>{{emp_salary}}</td>
+                <td>{{emp_exp}}</td>
+                <td>{{emp_des}}</td>
+                <td>{{emp_edu}}</td>
+                <td>{{emp_email}}</td>
+                <td>{{emp_skills}}</td>
+                <td>{{emp_phone}}</td>
+                <td>{{emp_gender}}</td>
+                <td>{{emp_location}}</td>
+                <td><a href="/employee/{{_id}}" class="btn-primary btn btn-block btn-sm"> View Profile</a></td>
+                
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </article>
+</section> --}}
+
+
+
+
+
+<section class="container mt-5">
+    <article class="row">
+{{#each payload}}
+    <div class="card mx-2 text-white bg-warning mb-3" style="width:18rem;">
+        <img class="card-top" style="height:250px;" src="{{trimString emp_photo.0.path}}" alt="{{emp_name}}">
+  <div class="card-body">
+    <h5 class="card-title text-capitalize">{{emp_name}}</h5>
+    <p class="card-text">{{emp_email}}</p>
+    <a href="/employee/{{_id}}" class="btn btn-danger">View Profile</a>
+  </div>
+</div>
+{{/each}}
+    </article>
+</section>
+

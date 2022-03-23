@@ -1,0 +1,35 @@
+<section id="authBlock">
+  <article class="col-md-4 mx-auto mt-5 p-5 bg-light">
+    <h2 class="h2 font-weight-bold text-secondary text-uppercase py-2">
+      LOGIN
+    </h2>
+    <form action="/auth/login" method="post">
+      
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input
+          type="email"
+          class="form-control"
+          name="email"
+          id="email"
+          placeholder="eg:xyz@gmail.com"
+        />
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input
+          type="password"
+          class="form-control"
+          name="password"
+          id="password"
+        />
+      </div>
+      <div class="form-group">
+        <button class="btn btn-primary btn-block">LOGIN</button>
+      </div>
+      <div class="form-group">
+          <a href="/auth/register" class="btn btn-outline-warning btn-block">Register Here</a>
+      </div>
+    </form>
+  </article>
+</section>
